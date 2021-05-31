@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express=require('express')
 const ejs=require('ejs')
 const path=require('path')
@@ -37,8 +38,8 @@ app.post('/send',(req, res)=>{
     port:26,
     secure:false,
     auth:{
-      user:'contact@codestarcambodia.tech',
-      pass:'subzh3ll'
+      user:process.env.EMAIL,
+      pass:process.env.EMAIL_PASSWORD
     },
     tls:{
       rejectUnauthorized:false
@@ -46,7 +47,7 @@ app.post('/send',(req, res)=>{
   })
   let mailOptions={
     from:'"CodeStar Contact" <contact@codestarcambodia.tech>',
-    to:'paranoid.grunge@gmail.com',
+    to:process.env.RECEIVER_EMAIL,
     subject:'CodeStar Contact Request',
     text:'howdy',
     html:output
@@ -85,8 +86,8 @@ app.post('/send',(req, res)=>{
       port:26,
       secure:false,
       auth:{
-        user:'contact@codestarcambodia.tech',
-        pass:'subzh3ll'
+        user:process.env.EMAIL,
+      pass:process.env.EMAIL_PASSWORD
       },
       tls:{
         rejectUnauthorized:false
@@ -94,7 +95,7 @@ app.post('/send',(req, res)=>{
     })
     let mailOptions={
       from:'"CodeStar Contact" <contact@codestarcambodia.tech>',
-      to:'paranoid.grunge@gmail.com',
+      to:process.env.RECEIVER_EMAIL,
       subject:'CodeStar Contact Request',
       text:'howdy',
       html:output
@@ -153,8 +154,8 @@ app.post('/register',(req, res)=>{
     port:26,
     secure:false,
     auth:{
-      user:'contact@codestarcambodia.tech',
-      pass:'subzh3ll'
+      user:process.env.EMAIL,
+      pass:process.env.EMAIL_PASSWORD
     },
     tls:{
       rejectUnauthorized:false
@@ -162,7 +163,7 @@ app.post('/register',(req, res)=>{
   })
   let mailOptions={
     from:'"CodeStar Contact" <contact@codestarcambodia.tech>',
-    to:'paranoid.grunge@gmail.com',
+    to:process.env.RECEIVER_EMAIL,
     subject:'CodeStar Contact Request',
     text:'howdy',
     html:output
