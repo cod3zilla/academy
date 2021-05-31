@@ -171,7 +171,7 @@ app.post('/register',(req, res)=>{
     }
     console.log('message sent %s',info.messageId)
     console.log('preview URL: %s', nodemailer.getTestMessageUrl(info))
-    res.redirect('/home')
+    res.redirect('/')
   })  
   }) 
 
