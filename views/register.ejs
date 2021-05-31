@@ -11,11 +11,11 @@
                 <div class="row">
                   <div class="col">
                     <label for="firstName">Frist Name</label>
-                    <input type="text" name="firstName" class="form-control" placeholder="First name" aria-label="First name">
+                    <input type="text" name="firstName" class="form-control" placeholder="First name" aria-label="First name" id="validationDefault01" required>
                   </div>
                   <div class="col">
                     <label for="lastName">Last Name</label>
-                    <input type="text" name="lastName" class="form-control" placeholder="Last name" aria-label="Last name">
+                    <input type="text" name="lastName" class="form-control" placeholder="Last name" aria-label="Last name" id="validationDefault02" required>
                   </div>
                 </div>
                 <div class="row">
@@ -47,11 +47,11 @@
                   </div>
                 <div class="form-group mb-2">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" class="form-control " id="email" placeholder="example@email.com" name="email">
+                    <input type="email" name="email" class="form-control " id="validationDefault03" placeholder="example@email.com" name="email" required>
                 </div>
                 <div class="form-group">
                   <label for="phone">Phnone Number</label>
-                  <input type="phone" name="phone" class="form-control " id="phone" placeholder="mobile" name="phone">
+                  <input type="phone" name="phone" class="form-control " id="validationDefault04" placeholder="mobile" name="phone" required>
               </div>
               
               <div class="row mt-3">
@@ -71,7 +71,7 @@
               </div>
               
               <div class="d-grid">
-                <button type="submit" onclick="rev()" class="btn btn-success btn-customized my-5">Submit Form</button>
+                <button type="submit" class="btn btn-success btn-customized my-5">Submit Form</button>
               </div>  
               <div id="success" class="alert alert-success" role="alert">
                 Thank you for register with us. we will send you course resources soon!

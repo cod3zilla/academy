@@ -19,6 +19,7 @@ app.get('/',(req, res)=>{
     res.render('home')
 })
 app.post('/send',(req, res)=>{
+  
   const {fullName,email,phone,message}=req.body 
   const output=`
   <p>you have new contact request</p>
@@ -66,6 +67,7 @@ app.post('/send',(req, res)=>{
   
   })
   app.post('/email',(req, res)=>{
+    
     const {fullName,email,phone,message}=req.body 
     const output=`
     <p>you have new contact request</p>
@@ -104,6 +106,7 @@ app.post('/send',(req, res)=>{
       }
       console.log('message sent %s',info.messageId)
       console.log('preview URL: %s', nodemailer.getTestMessageUrl(info))
+      
       res.render('contact')
     })  
     }) 
