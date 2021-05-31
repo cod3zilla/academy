@@ -1,0 +1,87 @@
+<%- include('partial/header.ejs') %>
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center ">
+        <div class="col-10 col-md-8 col-lg-6">
+            <!-- Form -->
+            <form class="form-example border border-warning p-2" action="register" method="POST"            
+            style="box-shadow: 5px 5px 7px 5px rgba(255,183,42,0.64);" >
+                <h3 class="text-center">Registration Form</h3>
+                <p class="description text-center">please fill all the given field.</p>
+                <!-- Input fields -->
+                <div class="row">
+                  <div class="col">
+                    <label for="firstName">Frist Name</label>
+                    <input type="text" name="firstName" class="form-control" placeholder="First name" aria-label="First name">
+                  </div>
+                  <div class="col">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" class="form-control" placeholder="Last name" aria-label="Last name">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="age">age</label>
+                    <input type="number" name="age" class="form-control" placeholder="age" aria-label="age">
+                  </div>
+                  <div class="col">
+                    <div class="form-check form-check-inline">
+                      <p>sex</p>
+                      <input class="form-check-input" type="radio" name="sex" id="inlineRadio1" value="male">
+                      <label class="form-check-label" for="inlineRadio1">male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="sex" id="inlineRadio2" value="female">
+                      <label class="form-check-label" for="inlineRadio2">female</label>
+                    </div>
+                  </div>
+                </div>
+                  <div class="row">
+                    <div class="col">
+                      <label for="city"> City</label>
+                      <input type="text" name="city" class="form-control" placeholder="City" aria-label="city">
+                    </div>
+                    <div class="col mb-2">
+                      <label for="province">Province</label>
+                      <input type="text" name="province" class="form-control" placeholder="Province" aria-label="Province">
+                    </div>
+                  </div>
+                <div class="form-group mb-2">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" class="form-control " id="email" placeholder="example@email.com" name="email">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phnone Number</label>
+                  <input type="phone" name="phone" class="form-control " id="phone" placeholder="mobile" name="phone">
+              </div>
+              
+              <div class="row mt-3">
+                <p class=" text-center">How did you found us?</p>
+                <div class="col">
+                  <input class="form-check-input" type="checkbox" name="connection" id="inlineRadio1" value="social media">
+                      <label class="form-check-label" for="inlineRadio1">Social Media</label>
+                </div>
+                <div class="col">
+                  <input class="form-check-input" type="checkbox" name="connection" id="inlineRadio1" value="friends">
+                      <label class="form-check-label" for="inlineRadio1">Friends</label>
+                </div>
+                <div class="col">
+                  <input class="form-check-input" type="checkbox" name="connection" id="inlineRadio1" value="advertisement">
+                      <label class="form-check-label" for="inlineRadio1">Advertisement</label>
+                </div>
+              </div>
+              
+              <div class="d-grid">
+                <button type="submit" onclick="rev()" class="btn btn-success btn-customized my-5">Submit Form</button>
+              </div>  
+              <div id="success" class="alert alert-success" role="alert">
+                Thank you for register with us. we will send you course resources soon!
+              </div>
+                <!-- End input fields -->
+                <p class="copyright text-center">&copy; CodeStar Academy- Sisophon <a href="/">Cambodia</a>.</p>
+            </form>
+            <!-- Form end -->
+        </div>
+    </div>
+</div>
+
+<%- include('partial/footer.ejs') %>
