@@ -34,7 +34,7 @@ app.post('/send',(req, res)=>{
   <p>${message}</p>
   ` ;
   let transporter=nodemailer.createTransport({
-    host:'mail.codestarcambodia.tech',
+    host:process.env.HOST,
     port:26,
     secure:false,
     auth:{
@@ -46,7 +46,7 @@ app.post('/send',(req, res)=>{
     }
   })
   let mailOptions={
-    from:'"CodeStar Contact" <contact@codestarcambodia.tech>',
+    from:process.env.SENDER_EMAIL,
     to:process.env.RECEIVER_EMAIL,
     subject:'CodeStar Contact Request',
     text:'howdy',
@@ -82,20 +82,20 @@ app.post('/send',(req, res)=>{
     <p>${message}</p>
     ` ;
     let transporter=nodemailer.createTransport({
-      host:'mail.codestarcambodia.tech',
-      port:26,
-      secure:false,
-      auth:{
-        user:process.env.EMAIL,
+      host:process.env.HOST,
+    port:26,
+    secure:false,
+    auth:{
+      user:process.env.EMAIL,
       pass:process.env.EMAIL_PASSWORD
-      },
-      tls:{
-        rejectUnauthorized:false
-      }
-    })
-    let mailOptions={
-      from:'"CodeStar Contact" <contact@codestarcambodia.tech>',
-      to:process.env.RECEIVER_EMAIL,
+    },
+    tls:{
+      rejectUnauthorized:false
+    }
+  })
+  let mailOptions={
+    from:process.env.SENDER_EMAIL,
+    to:process.env.RECEIVER_EMAIL,
       subject:'CodeStar Contact Request',
       text:'howdy',
       html:output
@@ -150,7 +150,7 @@ app.post('/register',(req, res)=>{
     
   ` ;
   let transporter=nodemailer.createTransport({
-    host:'mail.codestarcambodia.tech',
+    host:process.env.HOST,
     port:26,
     secure:false,
     auth:{
@@ -162,7 +162,7 @@ app.post('/register',(req, res)=>{
     }
   })
   let mailOptions={
-    from:'"CodeStar Contact" <contact@codestarcambodia.tech>',
+    from:process.env.SENDER_EMAIL,
     to:process.env.RECEIVER_EMAIL,
     subject:'CodeStar Contact Request',
     text:'howdy',
