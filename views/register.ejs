@@ -1,21 +1,28 @@
 <%- include('partial/header.ejs') %>
   <div class="container h-100">
     <div class="row h-100 justify-content-center align-items-center ">
+      <% if ( sessionFlash && sessionFlash.message) { %>
+        <div class="alert alert-<%= sessionFlash.type %> alert-dismissible fade show text-center">
+          <strong>Success</strong> <%= sessionFlash.message %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
         <div class="col-10 col-md-8 col-lg-6">
             <!-- Form -->
-            <form class="form-example border border-warning p-2" action="/register" method="POST"            
+            <form class="form-example border border-warning p-2 contact-form" action="/register" method="POST"            
             style="box-shadow: 5px 5px 7px 5px rgba(255,183,42,0.64);" >
                 <h3 class="text-center">Registration Form</h3>
                 <p class="description text-center">please fill all the given field.</p>
                 <!-- Input fields -->
                 <div class="row">
                   <div class="col">
+                   
                     <label for="firstName">Frist Name</label>
                     <input type="text" name="firstName" class="form-control" placeholder="First name" aria-label="First name" id="validationDefault01" required>
                   </div>
                   <div class="col">
                     <label for="lastName">Last Name</label>
-                    <input type="text" name="lastName" class="form-control" placeholder="Last name" aria-label="Last name" id="validationDefault02" required>
+                    <input type="text" name="lastName" class="form-control" placeholder="Last name" aria-label="Last name" id="validationDefault02"  >
                   </div>
                 </div>
                 <div class="row">
@@ -38,7 +45,7 @@
                   <div class="row">
                     <div class="col">
                       <label for="city"> City</label>
-                      <input type="text" name="city" class="form-control" placeholder="City" aria-label="city">
+                      <input type="text" name="city" class="form-control" placeholder="City" aria-label="city" required>
                     </div>
                     <div class="col mb-2">
                       <label for="province">Province</label>
@@ -47,7 +54,7 @@
                   </div>
                 <div class="form-group mb-2">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" class="form-control " id="validationDefault03" placeholder="example@email.com" name="email" required>
+                    <input type="email" name="email" class="form-control " id="validationDefault03" placeholder="example@email.com" name="email" required >
                 </div>
                 <div class="form-group">
                   <label for="phone">Phnone Number</label>
@@ -73,10 +80,7 @@
               <div class="d-grid">
                 <button type="submit" class="btn btn-success btn-customized my-5">Submit Form</button>
               </div>  
-              <div id="success" class="alert alert-success" role="alert">
-                Thank you for register with us. we will send you course resources soon!
-              </div>
-                <!-- End input fields -->
+              <!-- End input fields -->
                 <p class="copyright text-center">&copy; CodeStar Academy- Sisophon <a href="/">Cambodia</a>.</p>
             </form>
             <!-- Form end -->

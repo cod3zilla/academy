@@ -44,3 +44,15 @@ h5 {
      justify-content:space-around;
     
  }
+
+ .form-home {
+     background-color: #fff;
+     padding:2rem;
+     border-radius: 3%;
+ }
+
+.contact-form {
+    background-color: #fff;
+    padding:2rem;
+     border-radius: 3%;
+}

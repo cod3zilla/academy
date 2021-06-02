@@ -1,13 +1,19 @@
 <%- include('partial/header.ejs') %>
 <div class="container">
+  <% if ( sessionFlash && sessionFlash.message) { %>
+    <div class="alert alert-<%= sessionFlash.type %> alert-dismissible fade show text-center">
+      <strong>Success</strong> <%= sessionFlash.message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
     <div class="row my-5 border border-warning py-2">
         <div class="col">
-         <div class="d-flex"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.963933331384!2d102.97003755066973!3d13.599015090399588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311ae7d1729a0177%3A0x3f27413991d484f7!2sCodeStar%20Academy%20-%20Sisophon!5e0!3m2!1sen!2skh!4v1622046165802!5m2!1sen!2skh" width="660" height="530" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+         <div class="d-flex contact-form"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.963933331384!2d102.97003755066973!3d13.599015090399588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311ae7d1729a0177%3A0x3f27413991d484f7!2sCodeStar%20Academy%20-%20Sisophon!5e0!3m2!1sen!2skh!4v1622046165802!5m2!1sen!2skh" width="660" height="530" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
          </div>
             </div>
         <div class="col">
             <div class="col-sm ">
-                <form action="/contact" method="POST">
+                <form action="/contact" method="POST" class="contact-form">
                   <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
                     <input type="text" placeholder="your name" name="fullName" class="form-control" id="exampleInputPassword1" required>
@@ -29,10 +35,6 @@
                   <div class="d-grid">
                     <button type="submit" class="btn btn-danger">Submit</button>
                   </div>
-                  <div id="success" class="alert alert-success" role="alert"> 
-                            we will get back to you ASAP!
-                  </div>
-                  
                 </form>
               </div>
             </div>

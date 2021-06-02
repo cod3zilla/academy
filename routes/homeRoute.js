@@ -1,18 +1,18 @@
 const express=require('express')
 const nodemailer=require('nodemailer')
 const router=express.Router()
-const { sendForm, registerForm } = require('../controllers/send.controllers')
+const { sendForm,sendForm1, registerForm } = require('../controllers/send.controllers')
 
 router.get('/',(req, res)=>{
     res.render('home')
 })
 
-router.post('/',sendForm)
+router.post('/', sendForm)
 
 router.get('/contact',(req, res)=>{
     res.render('contact')  
   })
-router.post('/contact',sendForm) 
+router.post('/contact',sendForm1) 
 
 
 router.get('/syllabus',(req, res)=>{
