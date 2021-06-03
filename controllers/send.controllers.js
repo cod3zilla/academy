@@ -156,7 +156,26 @@ const sendForm= (req, res)=>{
           message: 'thank you for Register your seat with us.'
       }
       res.redirect(301, '/register');
-        }
+       }
     
-    module.exports={sendForm, sendForm1,registerForm}
+
+    ////course student logic
+    const studentId=(req, res)=>{
+      const {student}=req.body
+      const studentRoll='12345'
+      
+      if(studentRoll==student){
+        
+        res.send('Hurrayy you made it. Content will be uploaded soon')
+      }else{
+      
+        req.session.sessionFlash = {
+          type: 'danger',
+          message: 'enter your correct student-ID'
+      }
+      res.redirect(301, '/courses');
+        
+      }
+    }   
+    module.exports={studentId,sendForm, sendForm1,registerForm}
     
