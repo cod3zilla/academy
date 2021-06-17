@@ -6,6 +6,7 @@ const session=require('express-session')
 const cookieParser=require('cookie-parser')
 const nodemailer=require('nodemailer')
 const homeRouter=require('./routes/homeRoute')
+const {v4:uuidv4}=require('uuid')
 const ua=require('universal-analytics')
 
 var sessionStore = new session.MemoryStore;
@@ -19,10 +20,8 @@ app.use(express.urlencoded({
   extended: true
 }));
 // google analytic middleware
-const visitor=ua('G-C2Q00SYZQ1')
-visitor.pageview("/", function (err) {
-  //console.log(err)
-});
+const visitor=ua('G-C2Q00SYZQ1',uuidv4())
+
 /// set middle ware for session
 app.use(cookieParser('secret'));
 app.use(session({
