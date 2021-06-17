@@ -19,7 +19,7 @@ app.use(express.urlencoded({
   extended: true
 }));
 // google analytic middleware
-const visitor=ua('274984465')
+const visitor=ua('198901512')
 visitor.pageview("/", function (err) {
   //console.log(err)
 });
