@@ -19,9 +19,9 @@ app.use(express.urlencoded({
   extended: true
 }));
 // google analytic middleware
-const visitor=ua('2641833257')
+const visitor=ua('274984465')
 visitor.pageview("/", function (err) {
-  console.log(err)
+  //console.log(err)
 });
 /// set middle ware for session
 app.use(cookieParser('secret'));
