@@ -4,7 +4,7 @@
   "description": "web portal for codestar academy.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js",
     "devStart": " nodemon app.js"
   },
   "author": "paranoidcod3",
@@ -16,7 +16,6 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "nodemailer": "^6.6.1",
-    "universal-analytics": "^0.4.23",
     "uuid": "^8.3.2"
   }
 }
